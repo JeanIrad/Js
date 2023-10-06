@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS time</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        color: chocolate;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr auto;
+        gap: 2rem;
+        font-family: "poppins", sans-serif;
+        background-color: #e7e7e7;
+        margin-top: 2rem;
+      }
+      h1 {
+        text-shadow: 2px 1px 3px rgba(60, 60, 60, 0.5);
+        transition: all ease-in-out 0.5s;
+      }
+      h1:hover {
+        color: cadetblue;
+        font-size: 45px;
+      }
+      .root {
+        box-shadow: 2px 1px 4px rgba(60, 60, 60, 0.5);
+        border: 1px saddlebrown solid;
+        padding: 40px;
+        border-radius: 10px 35px 15px 40px;
+        background-color: rgba(60, 60, 60, 0.4);
+        transition: all ease-in-out 0.6s;
+      }
+      .root:hover {
+        background-color: burlywood;
+        border-color: grey;
+      }
+      span {
+        color: #eee;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello time JS</h1>
+    <div class="root"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const root = document.querySelector(".root");
+        const span = document.createElement("span");
+
+        function addDate() {
+          setInterval(() => {
+            const hr = new Date().getHours();
+            const min = new Date().getMinutes();
+            const secs = new Date().getSeconds();
+            const time = hr >= 12 ? "PM" : "AM";
+            span.textContent = `${hr}: ${min}: ${secs} ${time}`;
+
+            root.appendChild(span);
+          }, 1000);
+        }
+        addDate();
+      });
+    </script>
+  </body>
+</html>
