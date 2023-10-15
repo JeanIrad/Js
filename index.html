@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar Nav</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            display: flex;
+            /* flex-direction: column; */
+            height: 100vh;
+            width: 100%;
+            background-image: url('') position: relative;
+        }
+
+        nav {
+            width: 25%;
+            background-color: #9a9a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 1px 2px #666;
+            position: relative;
+            transition: all ease-in-out 1s;
+        }
+
+        span {
+            font-size: 32px;
+            color: #b84b4b;
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+
+            height: 80%;
+        }
+
+        ul li {
+            margin: 1rem 0;
+            justify-self: stretch;
+            font-size: 1.5rem;
+            transition: all ease-in-out 1s;
+        }
+
+        ul>li>a {
+            color: #2d1d1d;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color ease-in-out 0.5s;
+        }
+
+        .active {
+            background-color: #666;
+            padding: 5px 10px;
+            transition: all ease-in-out 0.8s;
+
+        }
+
+        .active:hover {
+            background-color: aquamarine;
+            font-size: 1.6rem;
+            border-radius: 5px;
+        }
+
+        .active:hover a {
+            color: #b84b4b;
+        }
+
+        .close-nav {
+            transition: all ease-in-out 1s;
+            width: 5%;
+            background-color: rgb(54, 75, 93);
+        }
+
+        .container {
+            width: calc(100% - 26%);
+            height: 3.5rem;
+            background-color: #603737;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .container h1 {
+            color: #fff;
+            margin-right: 1rem;
+        }
+
+        #dark-mode-bg {
+
+            background: #1f203b;
+        }
+
+        #dark-mode-color {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <span>&times;</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>dark</h1>
+    </div>
+    <script>
+        const NavList = document.querySelectorAll('li')
+        const nav = document.querySelector('nav')
+        const NavTimes = document.querySelector('span')
+
+
+        NavList.forEach(item => item.addEventListener('mouseover', function (e) {
+            if (!this.classList.contains('active')) {
+                this.classList.add('active')
+            }
+        }))
+        NavList.forEach(item => item.addEventListener('mouseleave', () => {
+            item.classList.remove('active')
+        }))
+        NavTimes.addEventListener('click', () => {
+            // alert('want to close nav?')
+            nav.classList.toggle('close-nav')
+            if (nav.classList.contains('close-nav')) {
+                NavTimes.innerHTML = '='
+                NavList.forEach(item => item.style.display = 'none')
+            } else {
+                NavTimes.innerHTML = '&times;'
+                NavList.forEach(item => item.style.display = 'block')
+            }
+        })
+        const h1 = document.querySelector('h1')
+        h1.onclick = () => {
+            document.body.style.background = '#222'
+            nav.setAttribute('id', 'dark-mode-bg')
+            NavList.forEach(li => li.setAttribute('id', 'dark-mode-color'))
+
+        }
+    </script>
+</body>
+
+</html>

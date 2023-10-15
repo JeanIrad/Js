@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image slider</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            background: #e9e9e9;
+            height: 100vh;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 4rem;
+            max-width: 30rem;
+            background-color: #666;
+            align-items: center;
+            box-shadow: 2px 1px 2px #555;
+            border-radius: 1rem;
+            min-height: 18rem;
+            min-width: 20rem;
+
+        }
+
+        figure {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            place-items: center;
+            margin-top: 2rem;
+        }
+
+        .heading {
+            color: aquamarine;
+            margin-top: 1rem;
+        }
+
+        img {
+            border-radius: 6px;
+            display: none;
+        }
+
+        img:first-of-type {
+            display: block;
+        }
+
+        .controls {
+            margin: 1rem 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .controls button {
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #666;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="heading">Image slider</h2>
+        <figure>
+            <img src="first.jpg" alt="my photos">
+            <img src="second.jpg" alt="my photos">
+            <img src="third.jpg" alt="my photos">
+            <img src="fourth.jpg" alt="my photos">
+            <img src="fith.jpg" alt="my photos">
+            <img src="sixth.jpg" alt="my photos">
+            <img src="seventh.png" alt="my photos">
+            <img src="eighth.png" alt="my photos">
+            <img src="nineth.jpg" alt="my photos">
+        </figure>
+        <div class="controls">
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+    <script src="images.js"></script>
+</body>
+
+</html>
