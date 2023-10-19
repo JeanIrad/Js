@@ -25,13 +25,13 @@
             display: flex;
             flex-direction: column;
             margin-top: 4rem;
-            max-width: 30rem;
+            max-width: 40rem;
             background-color: #666;
             align-items: center;
             box-shadow: 2px 1px 2px #555;
             border-radius: 1rem;
             min-height: 18rem;
-            min-width: 20rem;
+            min-width: 30rem;
 
         }
 
@@ -41,6 +41,7 @@
             width: 100%;
             place-items: center;
             margin-top: 2rem;
+            position: relative;
         }
 
         .heading {
@@ -71,6 +72,18 @@
             font-weight: 700;
             cursor: pointer;
         }
+        span{
+            display: none;
+            position: absolute;
+            color: rgb(6, 26, 26);
+            font-size: 26px;
+            font-weight: 500;
+            z-index: 100;
+            transition: all cubic-bezier(0.61, -0.75, 0.36, 1.62) 1s;
+        }
+        .spin{
+            transform: translateY(2rem);
+        }
     </style>
 </head>
 
@@ -78,6 +91,15 @@
     <div class="container">
         <h2 class="heading">Image slider</h2>
         <figure>
+            <span data-img="image 1"></span>
+            <span data-img="image 2"></span>
+            <span data-img="image 3"></span>
+            <span data-img="image 4"></span>
+            <span data-img="image 5"></span>
+            <span data-img="image 6"></span>
+            <span data-img="image 7"></span>
+            <span data-img="image 8"></span>
+            <span data-img="image 9"></span>
             <img src="first.jpg" alt="my photos">
             <img src="second.jpg" alt="my photos">
             <img src="third.jpg" alt="my photos">
