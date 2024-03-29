@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <!-- CDN for React and React-DOM-->
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js">
+    </script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/emotion@9.2.12/dist/emotion.umd.min.js">
+    </script>
+    <script src="https://unpkg.com/prop-types@15.5.10/prop-types.min.js">
+    </script>
+    <script src="https://unpkg.com/react-input-autosize@2.2.1/dist/react-input-autosize.min.js">
+    </script>
+
+    <!-- CDN for React-Select-->
+    <script src="https://unpkg.com/react-select@2.1.2/dist/react-select.min.js">
+    </script>
+
+    <!-- CDN for Babel-->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+
+    <!-- Link Stylesheet -->
+    <link rel="stylesheet" href="./index.css">
+    <title>React Select CDN with React and Babel</title>
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        {/* React Code */ }
+        // const options = [
+        //     { value: 'Jan', label: 'Jan' },
+        //     { value: 'Feb', label: 'Feb' },
+        //     { value: 'Mar', label: 'Mar' }
+        // ];
+
+
+        // class App extends React.Component {
+        //     state = {
+        //         option: null,
+        //     }
+        //     fun = (option) => {
+        //         this.setState({ option });
+        //     }
+        //     render() {
+        //         const { option } = this.state;
+
+        //         return (
+        //             <div class="container">
+        //                 Select the one
+        //                 <Select
+        //                     value={option}
+        //                     onChange={this.fun}
+        //                     options={options}
+        //                 />
+        //                 <div class="small">Option selected: </div>
+        //                 {option && option.label}
+        //             </div>
+        //         );
+        //     }
+        // }
+        function App() {
+            const array = ['jean', 'jehovanis', 'Paul']
+            return (
+                <ul>
+                    {array.map((item) => (
+                        <li>{item}</li>)
+                    )}
+                </ul>
+            )
+        }
+
+        ReactDOM.render(<App />
+            , document.querySelector("#root"))
+    </script>
+</body>
+
+</html>
